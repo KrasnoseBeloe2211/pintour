@@ -493,3 +493,144 @@ a {
 	background-color: #d95dff;
 	animation-timing-function: cubic-bezier(0.955, 0.103, 0.915, 0.585);
 }
+
+/* CUSTOM TOUR SECTION STYLES */
+
+.cst_tour_head {
+	background-color: #3ad8ff;
+	overflow-x: hidden;
+}
+
+.custom_tour {
+	width: 1234px;
+	margin: auto;
+	height: 490px;
+	background-color: #fff;
+	border-radius: 20px;
+	margin-bottom: 40px;
+}
+
+.cst_head_text {
+	margin-right: 40px;
+}
+
+.dialog {
+	position: relative;
+	background-image: url('./styles/dialog.png');
+	background-repeat: no-repeat;
+	width: 797px;
+	height: 314px;
+	animation: dialog 2s ease-in-out infinite;
+}
+
+@keyframes dialog {
+	from {
+		transform: scale(1) translateY(-10px);
+	}
+	50% {
+		transform: scale(1.03) translateY(10px);
+	}
+	to {
+		transform: scale(1) translateY(-10px);
+	}
+
+	
+}
+
+.dialog_txt {
+	transform: translateX(12%) translateY(50px);
+}
+
+.dialog_txt p {
+	font-size: 34px;
+	font-weight: 900;
+	width: 555px;
+	color: #fff;
+}
+
+.info_robo {
+	display: flex;
+	margin-top: 20px;
+	margin-left: 50px;
+}
+
+.sec-btn {	
+	max-width: 140px;
+	font-size: 20px;
+	padding: 10px 60px;
+	background-color: #818181;
+	color: #fff;
+	border-radius: 20px;
+	box-shadow: 1.4px 3px 0px 1.4px rgba(60, 60, 60, 0.75);
+}
+
+.purple {
+	transform: translateX(200px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ce48ff;
+	box-shadow: 2px 4px 0px 2px #824064;
+	transition: all 0.1s ease-in-out;
+}
+
+.purple:hover {
+	background-color: #4ab7ff;
+	box-shadow: 2px 4px 0px 2px #407082;
+	transform: translateX(200px) scale(1.05);
+}
+
+.purple:active {
+	transform: translateX(200px) translateY(5px) scale(1.05);
+	box-shadow: 1px 3px 0px 1px #407082;
+}
+
+.dog {
+	position: relative;
+}
+
+.eye {
+	background-image: url('./styles/dog_eye.svg');
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	animation: eye 2s ease-in-out infinite;
+}
+.eyes {
+	display: flex;
+	gap: 24px;
+	position: absolute;
+	top: 40px;
+	left: 90PX;
+}
+
+@keyframes eye {
+	from {
+		background-image: url('./styles/dog_open_eye.svg');
+	}
+	10% {
+		background-image: url('./styles/dog_eye.svg');
+	}
+	15% {
+		background-image: url('./styles/dog_open_eye.svg');
+	}
+	20% {
+		background-image: url('./styles/dog_eye.svg');
+	}
+	25% {
+		background-image: url('./styles/dog_open_eye.svg');
+	}
+
+	60% {
+		background-image: url('./styles/dog_open_eye.svg');
+	}
+	65% {
+		background-image: url('./styles/dog_eye.svg');
+	}
+	70% {
+		background-image: url('./styles/dog_open_eye.svg');
+	}
+	to {
+		background-image: url('./styles/dog_open_eye.svg');
+	}
+}

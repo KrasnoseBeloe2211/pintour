@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../styles/logo.png'
 import plane from '../styles/plane.png'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
 	return (
@@ -9,12 +10,12 @@ export default function Header() {
 			<div className='links_header'>
 				<ul className='header_list'>
 					<li>
-						<a className='header_link' href='#!'>
+						<Link className='header_link' to='/'>
 							Главная
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a className='header_link' href='#!'>
+						<a className='header_link' href='#tariff'>
 							Тарифы
 						</a>
 					</li>

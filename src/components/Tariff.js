@@ -3,10 +3,11 @@ import tarrif from '../styles/tarfiff 1.svg'
 import rect from '../styles/rect.svg'
 import star_active from '../styles/star_active.svg'
 import star_nonactive from '../styles/star_nonactive.svg'
+import { Link } from 'react-router-dom'
 
 export default function Tariff() {
   return (
-		<div className='tariffs'>
+		<div id='tariff' className='tariffs'>
 			<div className='hot_head tarrifs_head'>
 				<img className='background_h' src={rect} alt='' />
 				<div className='hot_head_text'>
@@ -15,7 +16,7 @@ export default function Tariff() {
 				</div>
 			</div>
 			<div className='tariffs_cards'>
-				<a className='tar_card' href='#!'>
+				<Link className='tar_card' to='/econom'>
 					<div>
 						<div className='tar_card_h'>
 							<h2>ЭКОНОМ</h2>
@@ -43,8 +44,8 @@ export default function Tariff() {
 							<h4>Мин.</h4>
 						</div>
 					</div>
-				</a>
-				<a className='tar_card comfort_card' href='#!'>
+				</Link>
+				<Link className='tar_card comfort_card' to='/comfort'>
 					<div>
 						<div className='tar_card_h comfort'>
 							<h2>КОМФОРТ</h2>
@@ -72,8 +73,8 @@ export default function Tariff() {
 							<h4>Сред.</h4>
 						</div>
 					</div>
-				</a>
-				<a className='tar_card business_card' href='#!'>
+				</Link>
+				<Link className='tar_card business_card' to='/business'>
 					<div>
 						<div className='tar_card_h business'>
 							<h2>БИЗНЕС</h2>
@@ -101,7 +102,7 @@ export default function Tariff() {
 							<h4>Полн.</h4>
 						</div>
 					</div>
-				</a>
+				</Link>
 			</div>
 		</div>
 	)
