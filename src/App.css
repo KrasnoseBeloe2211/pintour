@@ -10,6 +10,10 @@ body {
 	font-style: normal;
 }
 
+button {
+	cursor: pointer;
+}
+
 ul {
 	z-index: 2;
 	position: absolute;
@@ -533,8 +537,6 @@ a {
 	to {
 		transform: scale(1) translateY(-10px);
 	}
-
-	
 }
 
 .dialog_txt {
@@ -554,7 +556,7 @@ a {
 	margin-left: 50px;
 }
 
-.sec-btn {	
+.sec-btn {
 	max-width: 140px;
 	font-size: 20px;
 	padding: 10px 60px;
@@ -601,7 +603,7 @@ a {
 	gap: 24px;
 	position: absolute;
 	top: 40px;
-	left: 90PX;
+	left: 90px;
 }
 
 @keyframes eye {
@@ -633,4 +635,274 @@ a {
 	to {
 		background-image: url('./styles/dog_open_eye.svg');
 	}
+}
+
+/* CUSTOMPAGE STYLES */
+
+.dog_head {
+	position: relative;
+}
+
+.dog_eyes {
+	position: absolute;
+	transform: scale(0.6);
+	top: 20px;
+	left: 42px;
+}
+
+.eyes_right {
+	left: 47px;
+}
+
+.dialog_pos {
+	max-width: 360px;
+	position: absolute;
+	transform: translateX(660px) translateY(0px);
+	transition: all 2s ease-in-out;
+}
+
+.dialog_window {
+	position: relative;
+	width: 360px;
+	z-index: 100;
+	animation: dialog-window 1s ease-in-out infinite;
+}
+
+@keyframes dialog-window {
+	from {
+		transform: translateY(0%);
+	}
+	50% {
+		transform: translateY(2%);
+	}
+	to {
+		transform: translateY(0%);
+	}
+}
+
+.dog_pos {
+	position: absolute;
+	top: -10px;
+	right: -40px;
+	z-index: 1;
+}
+
+.custom_page {
+	position: relative;
+	margin: auto;
+	margin-top: 40px;
+	padding-top: 92px;
+	width: 1104px;
+	background-color: #fff;
+	border-radius: 20px;
+	padding-left: 37px;
+	padding-right: 37px;
+	padding-bottom: 52px;
+	overflow: hidden;
+}
+
+.dialog_text {
+	transform-origin: 100% 0%;
+	transform: scale(0);
+	background-color: #40b6ff;
+	text-align: center;
+	font-weight: 400;
+	color: #fff;
+	width: 276px;
+	height: 162px;
+	font-size: 28px;
+	padding: 24px 20px;
+	border-bottom-left-radius: 90px;
+	padding-bottom: 10px;
+	border-top-right-radius: 90px;
+	border-top-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	border: solid #ffffff5a;
+	z-index: 10;
+	border-width: 10px;
+	transition: all 1s ease-in-out;
+}
+
+.dialog_text_appears {
+	transform: scale(1);
+	z-index: 0;
+	transition: all 1s ease-in-out;
+}
+
+.form h1 {
+	color: #40b6ff;
+	font-size: 48px;
+	font-weight: 900;
+}
+
+.form input {
+	border: #3ad8ff00;
+	border-radius: 90px 45px;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	padding: 16px 10px;
+	font-size: 40px;
+	width: 160px;
+	font-weight: 900;
+	text-align: center;
+	background-color: #eeeeee;
+}
+
+input:focus {
+	outline: none;
+}
+
+input::placeholder {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+	transform: translateY(-5px);
+}
+
+.age {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	margin-bottom: 120px;
+}
+
+.ppl_cnt {
+	display: flex;
+	align-items: center;
+	transform: translateX(100%);
+	width: 550px;
+	gap: 24px;
+	margin-bottom: 140px;
+}
+
+.tariff_btns {
+	background-color: #eeeeee;
+	width: 590px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	overflow: hidden;
+	margin-bottom: 190px;
+}
+
+.tar_btn {
+	padding: 16px 45px;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-size: 28px;
+	color: #a7a7a7;
+	transition: all 0.2s ease-in-out;
+	border-radius: 20px;
+}
+
+.eco_btn {
+	background-color: #70ff5d;
+	color: #fff;
+	padding: 16px 50px;
+}
+
+.com_btn {
+	background-color: #5df7ff;
+	color: #fff;
+	padding: 16px 50px;
+}
+
+.bus_btn {
+	background-color: #d95dff;
+	color: #fff;
+	padding: 16px 50px;
+}
+
+.season_btn {
+	background: none;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	opacity: 50%;
+	transition: all 0.1s ease-in-out;
+	z-index: 1;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 180px;
+	height: 180px;
+}
+
+.season_btn:hover {
+	transform: scale(1.1);
+}
+
+.season_btn img {
+	z-index: 0;
+}
+
+.season_btns h2 {
+	color: #40b6ff;
+	font-size: 28px;
+	font-weight: 900;
+	margin-top: 100%;
+}
+
+.summer {
+	background-image: url('./styles/dog_summer.svg');
+}
+
+.autumn {
+	background-position-y: 8px;
+	background-image: url('./styles/dog_autumn.svg');
+}
+
+.winter {
+	background-image: url('./styles/dog_winter.svg');
+	gap: 0px;
+}
+
+.season_btns {
+	display: flex;
+	align-items: center;
+	transform: translateX(100%);
+	width: 530px;
+	margin-bottom: 94px;
+}
+
+.summer img {
+	margin-top: 40px;
+}
+
+.yes_no {
+	width: 390px;
+	margin-bottom: 104px;
+}
+
+.yes {
+	width: 195px;
+}
+
+.no {
+	width: 195px;
+}
+
+.yn_active {
+	color: #fff;
+	background-color: #4ab7ff;
+}
+
+.cst_btn {
+	padding: 10px 60px;
+	font-size: 24px;
+	color: #fff;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	border-radius: 20px;
+	margin-left: 15%;
+}
+
+.season_act {
+	opacity: 100%;
+}
+
+input {
+	z-index: 0;
+}
+
+.cst_sec {
+	padding-bottom: 100px;
 }
