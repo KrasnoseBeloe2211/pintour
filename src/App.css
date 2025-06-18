@@ -906,3 +906,7 @@ input {
 .cst_sec {
 	padding-bottom: 100px;
 }
+
+.cst_btn:disabled {
+	opacity: 50%;
+}

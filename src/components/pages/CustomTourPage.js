@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import Header from '../Header'
 import DogHead from '../DogHead'
 import check from '../../styles/check.svg'
 import check_nact from '../../styles/check_nonact.svg'
 
-
-
 let boolean = false
 export default function CustomTourPage() {
+	let prompt = {
+		age: '',
+		ppl_cnt: '',
+		tar: '',
+		season: '',
+		group: '',
+	}
 
-	const [prompt, setPrompt] = useState('')
-
+	const [disAct, setDisAct] = useState('disabled')
 	const [checkAge, setCheckAge] = useState(check_nact)
 	const [checkCnt, setCheckCnt] = useState(check_nact)
 	const [ageForm, setAgeForm] = useState('')
@@ -61,8 +66,18 @@ export default function CustomTourPage() {
 			setCheckAge(check)
 		}
 
-		if (isTClicked === true && isSClicked === true && isGClicked === true) {
+		if (
+			isTClicked === true &&
+			isSClicked === true &&
+			isGClicked === true &&
+			checkAge === check &&
+			checkCnt === check
+		) {
 			setIsAllClicked(true)
+			setDisAct('')
+		} else {
+			setIsAllClicked(false)
+			setDisAct('disabled')
 		}
 		if (!cntForm || !cntForm.match(/[1-9]/i) || cntForm.match(/[a-zA-Z]/i)) {
 			setCheckCnt(check_nact)
@@ -70,7 +85,16 @@ export default function CustomTourPage() {
 			setCheckCnt(check)
 		}
 		CheckDogPos()
-	}, [ageForm, cntForm, checkAge, checkCnt, isTClicked, isSClicked, isGClicked])
+	}, [
+		ageForm,
+		cntForm,
+		checkAge,
+		checkCnt,
+		isTClicked,
+		isSClicked,
+		isGClicked,
+		disAct
+	])
 
 	function CheckDogPos() {
 		if (checkAge !== check) {
@@ -79,6 +103,16 @@ export default function CustomTourPage() {
 				position: 'absolute',
 				transform: 'translateX(660px) translateY(-60px)',
 				transition: 'all 2s ease-in-out 0.5s',
+			})
+			setStylePage({
+				margin: 'auto',
+				margin_top: '40px',
+				padding_top: '92px',
+				width: '1300px',
+				height: '300px',
+				border_radius: '30px',
+				overflow: 'hidden',
+				transition: 'all 1s ease-in-out',
 			})
 			setDogClass('dialog_text dialog_text_appears')
 			setDogContent('Пожалуйства введите ваш возраст.')
@@ -202,9 +236,11 @@ export default function CustomTourPage() {
 
 	function handleAgeInput(e) {
 		setAgeForm(e.target.value)
+		prompt.age = e.target.value
 	}
 	function handleCntInput(e) {
 		setCntForm(e.target.value)
+		prompt.ppl_cnt = e.target.value
 	}
 
 	function handleTariffInput(e) {
@@ -213,18 +249,21 @@ export default function CustomTourPage() {
 			setComClass('tar_btn')
 			setBusClass('tar_btn')
 			setIsTClicked(true)
+			prompt.tar = 'Эконом'
 		}
 		if (e.target.id === 'com') {
 			setEcoClass('tar_btn')
 			setComClass('tar_btn com_btn')
 			setBusClass('tar_btn')
 			setIsTClicked(true)
+			prompt.tar = 'Комфорт'
 		}
 		if (e.target.id === 'bus') {
 			setEcoClass('tar_btn')
 			setComClass('tar_btn')
 			setBusClass('tar_btn bus_btn')
 			setIsTClicked(true)
+			prompt.tar = 'Бизнес'
 		}
 	}
 
@@ -234,16 +273,19 @@ export default function CustomTourPage() {
 			setAutClass('season_btn autumn')
 			setWinClass('season_btn winter')
 			setIsSClicked(true)
+			prompt.season = 'Лето'
 		} else if (e.target.id === 'aut') {
 			setSumClass('season_btn summer')
 			setAutClass('season_btn autumn season_act')
 			setWinClass('season_btn winter')
 			setIsSClicked(true)
+			prompt.season = 'Осень'
 		} else if (e.target.id === 'win') {
 			setSumClass('season_btn summer')
 			setAutClass('season_btn autumn')
 			setWinClass('season_btn winter season_act')
 			setIsSClicked(true)
+			prompt.season = 'Зима'
 		}
 	}
 
@@ -252,10 +294,12 @@ export default function CustomTourPage() {
 			setYClass('tar_btn yes yn_active')
 			setNClass('tar_btn no')
 			setIsGClicked(true)
+			prompt.group = 'Да'
 		} else if (e.target.id === 'no') {
 			setYClass('tar_btn yes')
 			setNClass('tar_btn no yn_active')
 			setIsGClicked(true)
+			prompt.group = 'Нет'
 		}
 	}
 
@@ -323,7 +367,9 @@ export default function CustomTourPage() {
 								Нет
 							</button>
 						</div>
-						<button className='cst_btn purple'>Создать тур</button>
+						<button className='cst_btn purple' disabled={disAct}>
+							Создать тур
+						</button>
 					</div>
 				</div>
 			</div>
