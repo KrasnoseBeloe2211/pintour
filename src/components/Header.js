@@ -4,6 +4,7 @@ import plane from '../styles/plane.png'
 import { Link } from 'react-router-dom'
 
 export default function Header() {
+	
 	return (
 		<div className='header'>
 			<img className='logo' src={logo} alt='pintour' />

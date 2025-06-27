@@ -5,7 +5,7 @@ import robo from '../styles/dog.svg'
 import { Link } from 'react-router-dom'
 
 export default function CustomTour() {
-  return (
+	return (
 		<div className='custom_tour'>
 			<div className='hot_head cst_tour_head'>
 				<img className='background_h' src={rect} alt='' />
@@ -18,7 +18,7 @@ export default function CustomTour() {
 				<div className='dialog'>
 					<div className='dialog_txt'>
 						<p>Хотите собрать тур по вашим предпочтениям?</p>
-						<p>Наша робо-андроидная масса-псина поможет вам с этим.</p>
+						<p>Наш робо-щеночек поможет вам с этим.</p>
 					</div>
 				</div>
 				<div className='dog'>

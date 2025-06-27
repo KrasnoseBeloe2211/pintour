@@ -3,10 +3,15 @@ import tarrif from '../styles/tarfiff 1.svg'
 import rect from '../styles/rect.svg'
 import star_active from '../styles/star_active.svg'
 import star_nonactive from '../styles/star_nonactive.svg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Tariff() {
-  return (
+	const navigate = useNavigate()
+	const handleTariffChange = () => {
+		navigate('/tours')
+	}
+
+	return (
 		<div id='tariff' className='tariffs'>
 			<div className='hot_head tarrifs_head'>
 				<img className='background_h' src={rect} alt='' />
@@ -16,7 +21,7 @@ export default function Tariff() {
 				</div>
 			</div>
 			<div className='tariffs_cards'>
-				<Link className='tar_card' to='/econom'>
+				<button id='econom' onClick={handleTariffChange} className='tar_card'>
 					<div>
 						<div className='tar_card_h'>
 							<h2>ЭКОНОМ</h2>
@@ -44,8 +49,12 @@ export default function Tariff() {
 							<h4>Мин.</h4>
 						</div>
 					</div>
-				</Link>
-				<Link className='tar_card comfort_card' to='/comfort'>
+				</button>
+				<button
+					onClick={handleTariffChange}
+					id='comfort'
+					className='tar_card comfort_card'
+				>
 					<div>
 						<div className='tar_card_h comfort'>
 							<h2>КОМФОРТ</h2>
@@ -73,8 +82,12 @@ export default function Tariff() {
 							<h4>Сред.</h4>
 						</div>
 					</div>
-				</Link>
-				<Link className='tar_card business_card' to='/business'>
+				</button>
+				<button
+					onClick={handleTariffChange}
+					id='business'
+					className='tar_card business_card'
+				>
 					<div>
 						<div className='tar_card_h business'>
 							<h2>БИЗНЕС</h2>
@@ -102,7 +115,7 @@ export default function Tariff() {
 							<h4>Полн.</h4>
 						</div>
 					</div>
-				</Link>
+				</button>
 			</div>
 		</div>
 	)

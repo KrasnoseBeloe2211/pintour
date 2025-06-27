@@ -4,7 +4,7 @@ import arrow from '../styles/slider_arrow.svg'
 import HotCard from './HotCard'
 
 let position = 0
-export default function Slider() {
+export default function Slider({ HotToursData, handleLink }) {
 	let sliders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 	let width = -sliders.length * 260
 	let lastPos = width + 260
@@ -90,17 +90,9 @@ export default function Slider() {
 				</button>
 			</div>
 			<div style={styleS}>
-				<HotCard />
-				<HotCard />
-				<HotCard />
-				<HotCard />
-				<HotCard />
-				<HotCard />
-				<HotCard />
-				<HotCard />
-				<HotCard />
-				<HotCard />
-				<HotCard />
+				{HotToursData.map((card, index) => (
+					<HotCard key={index} tourData={card} handleLink={handleLink} />
+				))}
 			</div>
 		</div>
 	)

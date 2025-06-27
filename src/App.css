@@ -14,6 +14,10 @@ button {
 	cursor: pointer;
 }
 
+p h1,h2,h3,h4,h5,h6 {
+	text-align: justify;
+}
+
 ul {
 	z-index: 2;
 	position: absolute;
@@ -158,6 +162,9 @@ a {
 }
 
 .header_link {
+	background: none;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-weight: 900;
 	color: #fff;
 	font-size: 20px;
 	transition: all 0.2s ease;
@@ -313,6 +320,7 @@ a {
 .stars {
 	height: 11px;
 	display: flex;
+	align-items: center;
 }
 
 .rate,
@@ -326,6 +334,8 @@ a {
 	font-size: 11px;
 	padding: 8px 16px;
 	border-radius: 20px;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-weight: 900;
 }
 
 .slider_photos {
@@ -443,12 +453,18 @@ a {
 	box-shadow: -2px 1px 0px 18px rgba(231, 231, 231, 0.479);
 }
 
+.econom {
+	background-color: #70ff5d;
+}
+
 .tar_card_h {
 	background-color: #70ff5d;
 	background-image: url('./styles/rect2.svg');
 	background-position-x: -260px;
 	background-size: 300px;
 	background-repeat: no-repeat;
+	width: 100%;
+	transform: translateX(-5px);
 	padding: 14px;
 	margin-bottom: 44px;
 	animation-name: rect-animate;
@@ -909,4 +925,240 @@ input {
 
 .cst_btn:disabled {
 	opacity: 50%;
+}
+
+/* TOURPAGE STYLES */
+
+.tour_sec {
+	margin: auto;
+	margin-top: 40px;
+	width: 1234px;
+	background-color: #fff;
+	border-radius: 20px;
+}
+
+.green {
+	background-color: #00ff84;
+}
+
+.main_inf {
+	padding: 27px 45px;
+}
+
+.tour_photo {
+	width: 463px;
+	border-radius: 40px;
+	border: solid #9ad8ff3e;
+	border-width: 11px;
+}
+
+.hotel_desc {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.decs_card {
+	display: flex;
+	gap: 20px;
+}
+
+.decs_card h2 {
+	color: #fff;
+	font-size: 28px;
+}
+
+.hotel_desc_desc {
+	background-color: #ff5d80;
+	padding: 27px 44px;
+	border-radius: 40px;
+}
+
+.hotel_name {
+	color: #fff;
+	text-align: center;
+	background-color: #ff5d80;
+	border-radius: 40px;
+	margin-bottom: 30px;
+}
+
+.tour_char {
+	background-color: #3ad8ff;
+}
+
+.tour_characterisctics {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	gap: 50px;
+}
+
+.tour_char {
+	padding: 27px 28px;
+	border-radius: 30px;
+}
+
+.tour_desc {
+	color: #fff;
+	background-color: #3ad8ff;
+	display: flex;
+	justify-content: center;
+	width: 562px;
+	padding: 20px;
+	border-radius: 30px;
+}
+
+.tour_sec {
+	margin-bottom: 200px;
+}
+
+.tour_name {
+	padding: 5px;
+	color: #fff;
+	text-align: center;
+	background-color: #8b5aff;
+	max-width: 615px;
+	margin: auto;
+	border-radius: 30px;
+	margin-bottom: 20px;
+}
+
+/* TOURS TARIFF PAGE STYLES */
+
+.tours_sec {
+	margin: auto;
+	max-width: 1234px;
+	margin-top: 40px;
+	transition: all 1s ease-in-out;
+}
+
+.choose_tariff {
+	display: flex;
+	overflow: hidden;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	width: 388px;
+}
+
+.button {
+	padding: 10px 20px;
+	font-size: 18px;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	background-color: #fff;
+	font-weight: 600;
+	color: #0000003f;
+	transition: all 0.2s ease-in-out;
+}
+
+.hotel_header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	transition: all 1s ease-in-out;
+}
+
+.tour_card_stars {
+	display: flex;
+	transition: all 1s ease-in-out;
+}
+
+.tour_card_stars img {
+	width: 24px;
+	transition: all 1s ease-in-out;
+}
+
+.tour_card {
+	display: flex;
+	background-color: #ffffff;
+	align-items: center;
+	justify-content: space-between;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 20px;
+	margin-top: 30px;
+	transition: all 1s ease-in-out;
+}
+
+.hotel_inf {
+	margin-top: 56px;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 5px;
+	transition: all 1s ease-in-out;
+}
+
+.tours_window {
+	background-color: #fff;
+	overflow: hidden;
+	border-radius: 20px;
+	border-top-left-radius: 0px;
+	padding: 20px;
+	transition: all 0.2s ease-in-out;
+}
+
+.tour_button {
+	margin-top: 10px;
+	font-size: 16px;
+	padding: 5px 60px;
+	border-radius: 30px;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-weight: 900;
+	background-color: #37ff9e;
+	color: #fff;
+	transition: all 0.2s ease-in-out;
+}
+
+.tour_inf {
+	display: flex;
+	justify-content: space-between;
+	gap: 120px;
+	transition: all 0.2s ease-in-out;
+}
+
+.tour_tariff {
+	height: 200px;
+	width: 300px;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease-in-out;
+}
+
+.tour_head {
+	display: flex;
+	flex-direction: column;
+	margin-left: 16px;
+	transition: all 0.2s ease-in-out;
+}
+
+.tour_head img {
+	border-radius: 20px;
+	width: 250px;
+	transition: all 0.2s ease-in-out;
+}
+
+.econom_btn {
+	background-color: #70ff5d;
+	color: #fff;
+	border-radius: 10px;
+}
+
+.comfort_btn {
+	background-color: #5df7ff;
+	color: #fff;
+	border-radius: 10px;
+}
+
+.business_btn {
+	background-color: #ce48ff;
+	color: #fff;
+	border-radius: 10px;
+}
+
+.all_btn {
+	background-color: #fbe56d;
+	color: #fff;
 }

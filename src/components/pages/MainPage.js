@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../Header'
 import HotTours from '../HotTours'
 
 import Tariff from '../Tariff'
 import CustomTour from '../CustomTour'
 
-export default function MainPage() {
+export default function MainPage({ pageChange, HotToursData, handleLink, handleTariffLink }) {
+	const pageName = 'MainPage'
+
+	useEffect(() => {
+		pageChange(pageName)
+	}, [])
+
 	return (
 		<>
 			<Header />
-			<HotTours />
+			<HotTours HotToursData={HotToursData} handleLink={handleLink} />
 			<CustomTour />
-			<Tariff />
+			<Tariff handleTariffLink={handleTariffLink} />
 		</>
 	)
 }

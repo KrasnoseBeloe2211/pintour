@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 import Header from '../Header'
 import DogHead from '../DogHead'
 import check from '../../styles/check.svg'
 import check_nact from '../../styles/check_nonact.svg'
+import axios from 'axios'
 
 let boolean = false
-export default function CustomTourPage() {
-	let prompt = {
-		age: '',
-		ppl_cnt: '',
-		tar: '',
-		season: '',
-		group: '',
-	}
-
+export default function CustomTourPage({ handleSubmitCustomTour, data, prompt, pageChange }) {
+	const pageName = 'CustomPage'
+	const navigator = useNavigate()	
+	useEffect(() => {pageChange(pageName)}, [])
 	const [disAct, setDisAct] = useState('disabled')
 	const [checkAge, setCheckAge] = useState(check_nact)
 	const [checkCnt, setCheckCnt] = useState(check_nact)
@@ -66,6 +62,10 @@ export default function CustomTourPage() {
 			setCheckAge(check)
 		}
 
+		if (data.tour_name) {
+			navigator('/tourPage')
+		}
+
 		if (
 			isTClicked === true &&
 			isSClicked === true &&
@@ -75,6 +75,7 @@ export default function CustomTourPage() {
 		) {
 			setIsAllClicked(true)
 			setDisAct('')
+			console.log(prompt)
 		} else {
 			setIsAllClicked(false)
 			setDisAct('disabled')
@@ -93,7 +94,8 @@ export default function CustomTourPage() {
 		isTClicked,
 		isSClicked,
 		isGClicked,
-		disAct
+		disAct,
+		data.tour_name
 	])
 
 	function CheckDogPos() {
@@ -134,7 +136,7 @@ export default function CustomTourPage() {
 				overflow: 'hidden',
 				transition: 'all 1s ease-in-out',
 			})
-			setDogContent('Сколько человек(обезъян) поедет?')
+			setDogContent('Сколько человек поедет в тур?')
 		}
 		if (checkCnt === check && checkAge === check && isTClicked === false) {
 			setDogStyle({
@@ -240,7 +242,7 @@ export default function CustomTourPage() {
 	}
 	function handleCntInput(e) {
 		setCntForm(e.target.value)
-		prompt.ppl_cnt = e.target.value
+		prompt.people_count = e.target.value
 	}
 
 	function handleTariffInput(e) {
@@ -249,21 +251,21 @@ export default function CustomTourPage() {
 			setComClass('tar_btn')
 			setBusClass('tar_btn')
 			setIsTClicked(true)
-			prompt.tar = 'Эконом'
+			prompt.tariff = 'Эконом'
 		}
 		if (e.target.id === 'com') {
 			setEcoClass('tar_btn')
 			setComClass('tar_btn com_btn')
 			setBusClass('tar_btn')
 			setIsTClicked(true)
-			prompt.tar = 'Комфорт'
+			prompt.tariff = 'Комфорт'
 		}
 		if (e.target.id === 'bus') {
 			setEcoClass('tar_btn')
 			setComClass('tar_btn')
 			setBusClass('tar_btn bus_btn')
 			setIsTClicked(true)
-			prompt.tar = 'Бизнес'
+			prompt.tariff = 'Бизнес'
 		}
 	}
 
@@ -294,12 +296,12 @@ export default function CustomTourPage() {
 			setYClass('tar_btn yes yn_active')
 			setNClass('tar_btn no')
 			setIsGClicked(true)
-			prompt.group = 'Да'
+			prompt.is_individual = false
 		} else if (e.target.id === 'no') {
 			setYClass('tar_btn yes')
 			setNClass('tar_btn no yn_active')
 			setIsGClicked(true)
-			prompt.group = 'Нет'
+			prompt.is_individual = true
 		}
 	}
 
@@ -367,7 +369,11 @@ export default function CustomTourPage() {
 								Нет
 							</button>
 						</div>
-						<button className='cst_btn purple' disabled={disAct}>
+						<button
+							onClick={handleSubmitCustomTour}
+							className='cst_btn purple'
+							disabled={disAct}
+						>
 							Создать тур
 						</button>
 					</div>
