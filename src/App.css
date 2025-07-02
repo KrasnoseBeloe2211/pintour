@@ -14,7 +14,12 @@ button {
 	cursor: pointer;
 }
 
-p h1,h2,h3,h4,h5,h6 {
+p h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	text-align: justify;
 }
 
@@ -183,6 +188,7 @@ a {
 	margin-top: 24px;
 	border-radius: 20px;
 	padding-bottom: 50px;
+	margin-bottom: 40px;
 }
 
 .hot_head {
@@ -346,6 +352,7 @@ a {
 .slider_photos img {
 	width: 200px;
 	border-radius: 20px;
+	height: 130px;
 }
 
 .price {
@@ -527,7 +534,7 @@ a {
 	height: 490px;
 	background-color: #fff;
 	border-radius: 20px;
-	margin-bottom: 40px;
+	margin-bottom: 160px;
 }
 
 .cst_head_text {
@@ -556,7 +563,7 @@ a {
 }
 
 .dialog_txt {
-	transform: translateX(12%) translateY(50px);
+	transform: translateX(5%) translateY(50px) scale(0.9);
 }
 
 .dialog_txt p {
@@ -833,13 +840,13 @@ input::placeholder {
 	background: none;
 	display: flex;
 	flex-direction: column;
-	gap: 30px;
+	gap: 40px;
 	opacity: 50%;
 	transition: all 0.1s ease-in-out;
 	z-index: 1;
 	background-repeat: no-repeat;
 	background-position: center;
-	width: 180px;
+	width: 280px;
 	height: 180px;
 }
 
@@ -848,14 +855,20 @@ input::placeholder {
 }
 
 .season_btn img {
+	width: 280px;
 	z-index: 0;
+}
+
+.season_btns {
+	gap: 20px;
 }
 
 .season_btns h2 {
 	color: #40b6ff;
 	font-size: 28px;
 	font-weight: 900;
-	margin-top: 100%;
+	text-align: center;
+	margin-top: 160px;
 }
 
 .summer {
@@ -872,11 +885,16 @@ input::placeholder {
 	gap: 0px;
 }
 
+.spring {
+	background-position-y: -4px;
+	background-image: url('./styles/dog_spring.svg');
+}
+
 .season_btns {
 	display: flex;
 	align-items: center;
-	transform: translateX(100%);
-	width: 530px;
+	transform: translateX(50%);
+	width: 740px;
 	margin-bottom: 94px;
 }
 
@@ -1006,10 +1024,11 @@ input {
 	width: 562px;
 	padding: 20px;
 	border-radius: 30px;
+	text-align: justify;
 }
 
 .tour_sec {
-	margin-bottom: 200px;
+	margin-bottom: 0px;
 }
 
 .tour_name {
@@ -1137,6 +1156,7 @@ input {
 .tour_head img {
 	border-radius: 20px;
 	width: 250px;
+	height: 166px;
 	transition: all 0.2s ease-in-out;
 }
 
@@ -1161,4 +1181,87 @@ input {
 .all_btn {
 	background-color: #fbe56d;
 	color: #fff;
+}
+
+p {
+	text-align: justify;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* FOOTER STYLES */
+
+.footer {
+	width: 1234px;
+	margin: auto;
+	border: solid #dd18fb;
+	border-top-width: 12px;
+	border-right-width: 12px;
+	border-left-width: 12px;
+	border-bottom-width: 0;
+	background-color: #ffffff;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 230px;
+	transform: translateY(100%);
+}
+
+.links {
+	display: flex;
+	flex-direction: column;
+}
+
+.a {
+	color: #dd18fb;
+}
+
+.footer p {
+	color: #dd18fb;
+	font-weight: 600;
+}
+
+/* ABOUT US PAGE STYLES */
+
+.about_us {
+	max-width: 1234px;
+	margin: auto;
+	margin-top: 160px;
+	background-color: #fff;
+	border-radius: 20px;
+}
+
+.icon {
+	width: 46px;
+}
+
+.inf {
+	padding: 20px;
+}
+
+.inf h2 {
+	color: #ff99d3;
+}
+
+.inf p {
+	font-weight: 600;
+	color: #5b5b5b;
+}
+
+.inf_tar {
+	padding: 20px;
+}
+
+.inf_tar h2 {
+	color: #30b7ff;
+}
+
+.inf_tar p {
+	font-weight: 600;
+	color: #5b5b5b;
+}
+
+p {
+	text-align: justify;
 }

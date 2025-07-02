@@ -21,9 +21,9 @@ export default function Header() {
 						</a>
 					</li>
 					<li>
-						<a className='header_link' href='#!'>
+						<Link className='header_link' to='/about_us'>
 							О нас
-						</a>
+						</Link>
 					</li>
 				</ul>
 				<img className='plane' src={plane} alt='plane' />

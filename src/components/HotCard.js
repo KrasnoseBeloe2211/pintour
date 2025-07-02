@@ -39,7 +39,7 @@ export default function HotCard({ tourData, handleLink }) {
 	return (
 		<div className='hot_card'>
 			<div className='slider_photos'>
-				<img src={card} alt='' />
+				<img src={tourData.image_base64} alt='' />
 			</div>
 			<h5>{tourData.hotel_name}</h5>
 			<div className='card_description'>

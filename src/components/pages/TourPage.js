@@ -6,6 +6,7 @@ import back_gr from '../../styles/back_gr.svg'
 import star_act from '../../styles/StarAct.svg'
 import star_nact from '../../styles/StarNAct.svg'
 import { useNavigate } from 'react-router-dom'
+import Footer from '../Footer'
 
 export default function TourPage({ data, pageChange }) {
 	const pageName = 'TourPage'
@@ -65,7 +66,7 @@ export default function TourPage({ data, pageChange }) {
 									<h2>{data.service_level}</h2>
 								</div>
 								<div className='decs_card adress'>
-									<h2>Адрес</h2>
+									<h2>Место</h2>
 									<h2>{data.location}</h2>
 								</div>
 							</div>
@@ -82,11 +83,14 @@ export default function TourPage({ data, pageChange }) {
 								<h2>{data.season}</h2>
 							</div>
 							<div className='decs_card'>
-								<h2>Целевая аудитория</h2>
+								<h2>Категория</h2>
 								<h2>{data.auditory}</h2>
 							</div>
 							<div className='decs_card'>
-								<h2>{data.group}</h2>
+								<h2>{data.group} тур</h2>
+							</div>
+							<div className='decs_card'>
+								<h2>Цена {data.cost} руб.</h2>
 							</div>
 						</div>
 						<div className='tour_desc'>
@@ -95,6 +99,7 @@ export default function TourPage({ data, pageChange }) {
 					</div>
 				</div>
 			</div>
+			<Footer/>
 		</div>
 	)
 }

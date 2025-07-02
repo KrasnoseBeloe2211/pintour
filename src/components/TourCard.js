@@ -19,8 +19,8 @@ export default function TourCard({ tour_inf, handleLink }) {
 			setTariffColor('tour_tariff business')
 		}
 	}, [tariffColor, setTariffColor, tour_inf.tariff.toLowerCase()])
-  const navigate = useNavigate()
-  const handleLinks = async () => {
+	const navigate = useNavigate()
+	const handleLinks = async () => {
 		handleLink(tour_inf)
 		navigate('/tourPage')
 	}
@@ -54,7 +54,7 @@ export default function TourCard({ tour_inf, handleLink }) {
 		<div className='tour_card'>
 			<div className='tour_head'>
 				<h3>{tour_inf.tour_name}</h3>
-				<img src={photo} alt='' />
+				<img src={tour_inf.image_base64} alt='' />
 			</div>
 			<div className='tour_inf'>
 				<div className='hotel_inf'>

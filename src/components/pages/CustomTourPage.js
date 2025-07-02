@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Footer from '../Footer'
 import Header from '../Header'
 import DogHead from '../DogHead'
 import check from '../../styles/check.svg'
@@ -7,10 +8,17 @@ import check_nact from '../../styles/check_nonact.svg'
 import axios from 'axios'
 
 let boolean = false
-export default function CustomTourPage({ handleSubmitCustomTour, data, prompt, pageChange }) {
+export default function CustomTourPage({
+	handleSubmitCustomTour,
+	data,
+	prompt,
+	pageChange,
+}) {
 	const pageName = 'CustomPage'
-	const navigator = useNavigate()	
-	useEffect(() => {pageChange(pageName)}, [])
+	const navigator = useNavigate()
+	useEffect(() => {
+		pageChange(pageName)
+	}, [])
 	const [disAct, setDisAct] = useState('disabled')
 	const [checkAge, setCheckAge] = useState(check_nact)
 	const [checkCnt, setCheckCnt] = useState(check_nact)
@@ -22,6 +30,7 @@ export default function CustomTourPage({ handleSubmitCustomTour, data, prompt, p
 	const [sumClass, setSumClass] = useState('season_btn summer')
 	const [autClass, setAutClass] = useState('season_btn autumn')
 	const [winClass, setWinClass] = useState('season_btn winter')
+	const [springClass, setSpringClass] = useState('season_btn spring')
 	const [YClass, setYClass] = useState('tar_btn yes')
 	const [NClass, setNClass] = useState('tar_btn no')
 	const [isTClicked, setIsTClicked] = useState(false)
@@ -95,7 +104,7 @@ export default function CustomTourPage({ handleSubmitCustomTour, data, prompt, p
 		isSClicked,
 		isGClicked,
 		disAct,
-		data.tour_name
+		data.tour_name,
 	])
 
 	function CheckDogPos() {
@@ -274,20 +283,30 @@ export default function CustomTourPage({ handleSubmitCustomTour, data, prompt, p
 			setSumClass('season_btn summer season_act')
 			setAutClass('season_btn autumn')
 			setWinClass('season_btn winter')
+			setSpringClass('season_btn spring')
 			setIsSClicked(true)
 			prompt.season = 'Лето'
 		} else if (e.target.id === 'aut') {
 			setSumClass('season_btn summer')
 			setAutClass('season_btn autumn season_act')
 			setWinClass('season_btn winter')
+			setSpringClass('season_btn spring')
 			setIsSClicked(true)
 			prompt.season = 'Осень'
 		} else if (e.target.id === 'win') {
 			setSumClass('season_btn summer')
 			setAutClass('season_btn autumn')
 			setWinClass('season_btn winter season_act')
+			setSpringClass('season_btn spring')
 			setIsSClicked(true)
 			prompt.season = 'Зима'
+		} else if (e.target.id === 'spr') {
+			setSumClass('season_btn summer')
+			setAutClass('season_btn autumn')
+			setWinClass('season_btn winter')
+			setSpringClass('season_btn spring season_act')
+			setIsSClicked(true)
+			prompt.season = 'Весна'
 		}
 	}
 
@@ -360,6 +379,13 @@ export default function CustomTourPage({ handleSubmitCustomTour, data, prompt, p
 							<button id='win' onClick={handleSeasonInput} className={winClass}>
 								<h2>Зима</h2>
 							</button>
+							<button
+								id='spr'
+								onClick={handleSeasonInput}
+								className={springClass}
+							>
+								<h2>Весна</h2>
+							</button>
 						</div>
 						<div className='tariff_btns yes_no'>
 							<button id='yes' onClick={handleYNInput} className={YClass}>
@@ -379,6 +405,7 @@ export default function CustomTourPage({ handleSubmitCustomTour, data, prompt, p
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</div>
 	)
 }

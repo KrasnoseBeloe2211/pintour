@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../Header'
 import TourCard from '../TourCard'
+import Footer from '../Footer'
 
 export default function TariffsPages({ toursList, handleLink }) {
 	let eco_tours = []
@@ -13,7 +14,6 @@ export default function TariffsPages({ toursList, handleLink }) {
 	const [allClass, setAllClass] = useState('button')
 	const [currentMas, setCurMas] = useState(toursList)
 
-	
 	useEffect(() => {
 		ChangeTar()
 	}, [currentMas, eco_tours, com_tours, bus_tours])
@@ -87,6 +87,7 @@ export default function TariffsPages({ toursList, handleLink }) {
 					))}
 				</div>
 			</div>
+			<Footer/>
 		</>
 	)
 }
