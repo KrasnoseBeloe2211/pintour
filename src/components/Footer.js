@@ -7,7 +7,7 @@ export default function Footer() {
 			<div className='links'>
 				<h2>Страницы</h2>
 				<Link className='a' to='/tours'>
-					Все Туры
+					Обзор туров
 				</Link>
 				<Link className='a' to='/custom_tour'>
 					Индивидуальный тур
@@ -37,13 +37,13 @@ export default function Footer() {
 			<div className='links'>
 				<h2>Партнёры</h2>
 				<div className='links_text'>
-					<a className='a' href='https://www.fpifpi.ru/'>
-						ФПИ БАНК
+					<a className='a' href='https://t.me/pinayewa'>
+						ООО ПИН-КОД
 					</a>
 				</div>
 				<div className='links_text'>
-					<a className='a' href='https://t.me/pinayewa'>
-						ООО ПИН-КОД
+					<a className='a' href='https://www.fpifpi.ru/'>
+						ФПИ Банк
 					</a>
 				</div>
 				<div className='links_text'>
